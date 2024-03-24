@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    line-height: 30px;
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: #333;
+}
+
+.container {
+    max-width: 400px;
+    width: 100%;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    background: #484848;
+}
+
+.container h1 {
+    margin-bottom: 20px;
+    font-size: 20px;
+    color: #cfcfcf;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group input {
+    height: 55px;
+    padding: 10px;
+    width: 100%;
+    background: #333;
+    border: none;
+    border-radius: 7px;
+    color: #f5f5f5;
+    outline: none;
+}
+
+.btn-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    height: 45px;
+    background: #ccc;
+    border: none;
+    outline: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#generateBtn {
+    flex-grow: 2;
+}
+
+#copyPassword {
+    flex-grow: 1;
+}
+
+.password-properties {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.property-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.property-group label {
+    cursor: pointer;
+    color: #f5f5f5;
+}
+
+.property-group:first-child {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 10px;
+}
+
+.property-group:first-child input {
+    width: 100%;
+}
+
+.property-group:first-child label {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
