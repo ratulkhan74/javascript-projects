@@ -34,10 +34,22 @@ body {
 
 .input-group {
     margin-bottom: 20px;
+    position: relative;
+}
+
+#strongMessage {
+    background: #202020;
+    border-radius: 5px;
+    position: absolute;
+    top: -15px;
+    right: 15px;
+    padding: 0px 10px;
+    font-size: 14px;
+    font-weight: 600;
 }
 
 .input-group input {
-    height: 55px;
+    height: 60px;
     padding: 10px;
     width: 100%;
     background: #333;

@@ -7,6 +7,8 @@ const isNumber = document.getElementById('number');
 const isChar = document.getElementById('char');
 const capLetter = document.getElementById('capLetter');
 const smallLetter = document.getElementById('smallLetter');
+const strongMessage = document.getElementById('strongMessage');
+const lengthCount = document.querySelector('.length-count');
 
 
 function generateRandomPassword() {
@@ -23,6 +25,8 @@ function generateRandomPassword() {
         generatedPassword += randomPasswordString.charAt(passChar);
     }
 
+    strongPasswordMessage();
+
     passInput.value = generatedPassword;
     copyPassword.innerHTML = 'Copy';
 }
@@ -34,12 +38,33 @@ function copyGeneratedPassword() {
 }
 
 function changeInputRangeValue() {
-    const lengthCount = document.querySelector('.length-count');
     lengthCount.innerHTML = `(${this.value})`;
     copyPassword.innerHTML = 'Copy';
 }
+
+function strongPasswordMessage() {
+    if (passLength.value <= 6) {
+        strongMessage.innerHTML = `Very Weak`;
+        strongMessage.style.color = '#f00'
+
+    } else if (passLength.value >= 6 && passLength.value <= 7) {
+        strongMessage.innerHTML = `Weak`;
+        strongMessage.style.color = '#f00'
+    } else if (passLength.value >= 7 && passLength.value <= 10) {
+        strongMessage.innerHTML = `Medium`;
+        strongMessage.style.color = '#EEBA56'
+    } else if (passLength.value >= 10 && passLength.value <= 14) {
+        strongMessage.innerHTML = `Strong`;
+        strongMessage.style.color = '#7FDF4B'
+    } else if (passLength.value >= 14) {
+        strongMessage.innerHTML = `Very Strong`;
+        strongMessage.style.color = '#7FDF4B'
+    }
+}
+
 window.onload = function () {
     generateRandomPassword();
+    strongPasswordMessage();
     copyPassword.innerHTML = 'Copy';
 }
 generateBtn.addEventListener('click', generateRandomPassword);
