@@ -27,7 +27,7 @@ body {
 }
 
 .container h1 {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     font-size: 20px;
     color: #cfcfcf;
 }
@@ -116,4 +116,18 @@ body {
     width: 100%;
     display: flex;
     justify-content: space-between;
+}
+
+.inner-properties {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.inner-properties .property-group:first-child {
+    flex-direction: row;
+    margin-bottom: 0;
+    align-items: center;
 }
