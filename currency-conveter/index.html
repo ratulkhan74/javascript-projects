@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Currency Converter | JavaScript</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+
+        <div class="container">
+            <div class="sidebar-img">
+                <img src="https://images.pexels.com/photos/164527/pexels-photo-164527.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                    alt="">
+            </div>
+            <div class="wrapper">
+                <form>
+                    <div class="wrapper-row">
+                        <div class="input-group">
+                            <label for="from">From</label>
+                            <input type="number" min="0" id="from" placeholder="Amount" value="0">
+                        </div>
+                        <div class="currency-type">
+                            <p>Currency</p>
+                            <select id="curency-from">
+                                <option value="">USD</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="wrapper-row">
+                        <div class="input-group">
+                            <label for="to">To</label>
+                            <input type="number" min="0" id="to" placeholder="Amount" value="0">
+                        </div>
+                        <div class="currency-type">
+                            <p>Currency</p>
+                            <select id="curency-to">
+                                <option value="">USD</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <button id="converBtn" type="submit">Convert Currency</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <script src="app.js"></script>
+    </body>
+
+</html>

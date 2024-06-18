@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="calculator-wrapper">
+        <div class="calculator-screen">0</div>
+        <div class="calculator-keys">
+            <button type="button" onclick='inputDigit("7")'>7</button>
+            <button type="button" onclick='inputDigit("8")'>8</button>
+            <button type="button" onclick='inputDigit("9")'>9</button>
+            <button type="button" class="oparetor">&#8730;</button>
+            <button type="button" onclick='inputDigit("4")'>4</button>
+            <button type="button" onclick='inputDigit("5")'>5</button>
+            <button type="button" onclick='inputDigit("6")'>6</button>
+            <button type="button" class="oparetor">&divide;</button>
+            <button type="button" onclick='inputDigit("1")'>1</button>
+            <button type="button" onclick='inputDigit("2")'>2</button>
+            <button type="button" onclick='inputDigit("3")'>3</button>
+            <button type="button" class="oparetor">&times;</button>
+            <button type="button" onclick="toggleSign()">+/-</button>
+            <button type="button" onclick='inputDigit("0")'>0</button>
+            <button type="button" class="dot" onclick="inputDecimal()"><span></span></button>
+            <button type="button" class="oparetor">&plus;</button>
+            <button type="button" class="clear-all" onclick="screenAllClear()">AC</button>
+            <button type="button" class="clear-entry" onclick="clearEntry()">CE</button>
+            <button type="button" class="oparetor">=</button>
+            <button type="button" class="oparetor">&minus;</button>
+        </div>
+    </div>
+
+
+    <script src="app.js"></script>
+</body>
+</html>

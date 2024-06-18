@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Currency Converter</title>
+    </head>
+
+    <body>
+        <h1>Currency Converter</h1>
+        <div>
+            <label>From:</label>
+            <input type="number" id="fromAmount" value="1" />
+            <select id="fromCurrency">
+                <!-- Options will be populated dynamically via JavaScript -->
+            </select>
+        </div>
+        <div>
+            <label>To:</label>
+            <input type="text" id="toAmount" readonly />
+            <select id="toCurrency">
+                <!-- Options will be populated dynamically via JavaScript -->
+            </select>
+        </div>
+        <button id="convertButton">Convert</button>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const fromAmountInput = document.getElementById('fromAmount');
+                const toAmountInput = document.getElementById('toAmount');
+                const fromCurrencySelect = document.getElementById('fromCurrency');
+                const toCurrencySelect = document.getElementById('toCurrency');
+                const convertButton = document.getElementById('convertButton');
+
+                // Fetch currency rates
+                fetchCurrencyRates();
+
+                async function fetchCurrencyRates() {
+                    try {
+                        const response = await fetch('https://v6.exchangerate-api.com/v6/d337fe240c28b1653b8dc674/latest/USD');
+                        const data = await response.json();
+                        const currencies = Object.keys(data.conversion_rates);
+
+                        // Populate currency select options
+                        currencies.forEach(currency => {
+                            const option1 = document.createElement('option');
+                            option1.text = currency;
+                            option1.value = currency;
+                            const option2 = option1.cloneNode(true);
+                            fromCurrencySelect.add(option1);
+                            toCurrencySelect.add(option2);
+                        });
+
+                        // Initialize conversion on button click
+                        convertButton.addEventListener('click', () => {
+                            const fromCurrency = fromCurrencySelect.value;
+                            const toCurrency = toCurrencySelect.value;
+                            const amount = parseFloat(fromAmountInput.value);
+                            const rate = data.conversion_rates[toCurrency];
+                            const result = (amount * rate).toFixed(2);
+                            toAmountInput.value = result;
+                        });
+                    } catch (error) {
+                        console.error('Error fetching currency rates: ', error);
+                    }
+                }
+            });
+        </script>
+    </body>
+
+</html>
